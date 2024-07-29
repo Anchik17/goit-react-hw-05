@@ -10,8 +10,8 @@ const Header = () => {
   return (
     <div>
       <header className={s.header}>
-        <nav>
-          <ul>
+        <nav className={s.nav}>
+          <ul className={s.navList}>
             <li>
               <NavLink className={buildLinkClass} to='/'>
                 Home
