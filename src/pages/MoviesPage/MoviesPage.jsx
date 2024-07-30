@@ -2,6 +2,7 @@ import { useEffect, useState } from 'react';
 import SearchForm from '../../components/SearchForm/SearchForm';
 import { useLocation, useSearchParams } from 'react-router-dom';
 import MovieList from '../../components/MovieList/MovieList';
+import { getMovies } from '../../service/api';
 
 const MoviesPage = () => {
   const [movies, setMovies] = useState([]);
@@ -16,7 +17,7 @@ const MoviesPage = () => {
     if (query) {
       const fetchMovies = async () => {
         try {
-          const searchResult = await fetchMovies(query);
+          const searchResult = await getMovies(query);
           setMovies(searchResult.results);
         } catch (error) {
           console.error('Error searching movies', error);

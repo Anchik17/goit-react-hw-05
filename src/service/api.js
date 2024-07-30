@@ -23,7 +23,7 @@ export const fetchTrendingMovies = async () => {
   }
 };
 
-export const fetchMovies = async (query) => {
+export const getMovies = async (query) => {
   try {
     const response = await api.get('/search/movie', {
       params: { query, include_adult: false, language: 'en-US', page: 1 },
