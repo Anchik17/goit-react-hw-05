@@ -12,8 +12,9 @@ const MovieCast = () => {
   useEffect(() => {
     async function fetchCasts() {
       try {
-        const casts = getMovieCast(movieId);
+        const casts = await getMovieCast(movieId);
         SetCast(casts);
+        console.log(casts);
       } catch (error) {
         {
           console.error('Error fetching movie casts:', error);

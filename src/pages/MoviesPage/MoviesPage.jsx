@@ -26,10 +26,7 @@ const MoviesPage = () => {
     }
   }, [query]);
 
-  const handleSearch = (event) => {
-    event.preventDefault();
-    const form = event.currentTarget;
-    const newQuery = form.elements.search.value;
+  const handleSearch = (newQuery) => {
     setSearchParams({ query: newQuery });
   };
   return (
